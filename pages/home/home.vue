@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="search-box">
+			<my-search @click="searchClickHandle"></my-search>
+		</view>
 		<!-- 轮播图 -->
 		<swiper
 			class="swiper"
@@ -125,6 +128,12 @@ export default {
 			});
 
 			this.floorList = res.message;
+		},
+		// 搜索按钮的回调
+		searchClickHandle() {
+			uni.navigateTo({
+				url:'/subpkg/search/search'
+			})
 		}
 	}
 };
@@ -165,5 +174,10 @@ export default {
 
 .floor-list {
 	padding: 10rpx;
+}
+.search-box {
+	position: sticky;
+	top: 0;
+	z-index: 999;
 }
 </style>

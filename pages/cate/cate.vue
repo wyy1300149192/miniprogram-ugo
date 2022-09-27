@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search @click="searchClickHandle"></my-search>
 		<view class="scroll-box">
 			<!-- 左侧滚屏 -->
 			<scroll-view
@@ -98,6 +99,12 @@ export default {
 			// 携带id跳转
 			uni.navigateTo({
 				url:'/subpkg/goods_list/goods_list?cid=' + cid
+			})
+		},
+		// 搜索框点击回调
+		searchClickHandle() {
+			uni.navigateTo({
+				url:'/subpkg/search/search'
 			})
 		}
 	}
